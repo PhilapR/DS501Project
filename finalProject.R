@@ -2,8 +2,10 @@ library(shiny)
 library(dplyr)
 library(onehot)
 library(ggplot2)
+library(rcurl)
 
-
+url = get_url("https://raw.githubusercontent.com/PhilapR/DS501Project/main/train.csv")
+train = read_csv(url)
 varnames = setdiff(names(train), c("Id","SalePrice"))
 min = 2
 
